@@ -1,0 +1,27 @@
+
+node_modules/
+
+dist/
+dist-ssr/
+build/
+
+.env
+.env.*
+
+.vite/
+.cache/
+
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
+
+# тесты
+coverage/
