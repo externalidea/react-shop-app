@@ -13,9 +13,12 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
+    // Wrapping the app with ProductProvider to provide context to all components
     <ProductProvider>
+      // Using React Router for navigation between pages
       <Router>
         <Routes>
+          // Main layout for most pages, includes navigation
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="cart" element={<Cart />} />
@@ -24,6 +27,7 @@ function App() {
             <Route path="admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Route>
+          // Separate layout for auth pages (login/register) with different styling
           <Route path="/login" element={<AuthLayout />}>
             <Route index element={<Login />} />
           </Route>

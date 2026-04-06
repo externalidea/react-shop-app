@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, setCart, updateQty } = useContext(ProductContext);
+  // Calculating total price using reduce for efficiency
   const totalPrice = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   return (

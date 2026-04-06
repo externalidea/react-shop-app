@@ -2,7 +2,11 @@ import { createContext, useState, useEffect } from 'react';
 
 export const ProductContext = createContext();
 
+// Using React Context to manage global state across the app
+// This avoids prop drilling and keeps state centralized
 export const ProductProvider = ({ children }) => {
+  // Initial products with some sample data
+  // Using localStorage to persist data between sessions, as required
   const [products, setProducts] = useState(() => {
     const saved = localStorage.getItem('shop_products');
     return saved ? JSON.parse(saved) : [
@@ -33,6 +37,7 @@ export const ProductProvider = ({ children }) => {
     return saved ? JSON.parse(saved) : null;
   });
 
+  // Persist products to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem('shop_products', JSON.stringify(products));
   }, [products]);
@@ -49,7 +54,7 @@ export const ProductProvider = ({ children }) => {
     localStorage.setItem('shop_currentUser', JSON.stringify(currentUser));
   }, [currentUser]);
 
-  // Auth functions
+  // Auth functions for login/register
   const login = (email, password) => {
     const user = users.find(u => u.email === email && u.password === password);
     if (user) {
@@ -70,7 +75,8 @@ export const ProductProvider = ({ children }) => {
     setCurrentUser(null);
   };
 
-  // КОРЗИНА: Добавление с учетом количества
+  // Cart functions: add with quantity, update quantity
+  // Using array methods to update state immutably
   const addToCart = (product) => {
     setCart(prev => {
       const existing = prev.find(item => item.id === product.id);
@@ -87,7 +93,7 @@ export const ProductProvider = ({ children }) => {
     ));
   };
 
-  // АДМИНКА: CRUD
+  // Admin CRUD functions for products
   const deleteProduct = (id) => setProducts(products.filter(p => p.id !== id));
   
   const updateProduct = (id, updatedData) => {

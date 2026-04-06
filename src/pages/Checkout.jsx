@@ -8,6 +8,7 @@ const Checkout = () => {
   const totalPrice = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   const handleCheckout = () => {
+    // Simple checkout simulation - in real app, this would send data to server
     alert('Order placed successfully!');
     setCart([]);
     navigate('/');
