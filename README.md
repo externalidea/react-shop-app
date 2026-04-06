@@ -1,16 +1,55 @@
-# React + Vite
+# FinalProject_Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Educational React shop project.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Client Side
+- Product catalog
+- Product page
+- Shopping cart (change quantity, remove items, calculate total)
 
-## React Compiler
+### Admin Panel
+- Admin authentication
+- Product management (add, edit, delete)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies
+- React 19
+- React Router DOM
+- Vite
+- CSS
+- LocalStorage for data storage
 
-## Expanding the ESLint configuration
+## Installation and Launch
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Make sure you have Node.js installed (version 16 or higher).
+
+2. Clone the repository or download the project files.
+
+3. Open the terminal in the project folder (`my-shop`).
+
+4. Install dependencies:
+   ```
+   npm install
+   ```
+
+5. Run the project in development mode:
+   ```
+   npm run dev
+   ```
+
+6. Open the browser and go to `http://localhost:5173` (or another address shown in the terminal).
+
+## Usage
+
+### For Customers
+- Browse the catalog on the home page
+- Click on the product name to view details
+- Add products to cart
+- Manage cart (quantity, remove)
+
+### For Admins
+- Login with admin credentials: `admin@shop.com` / `admin123`
+- Access the admin panel to manage products
+
+

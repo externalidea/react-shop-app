@@ -26,33 +26,42 @@ const Register = () => {
       <h2>Create Account</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleRegister} className="form-group">
-        <input 
-          placeholder="Nickname" 
-          required 
-          value={form.nickname}
-          onChange={e => setForm({...form, nickname: e.target.value})} 
-        />
-        <input 
-          type="email" 
-          placeholder="Email" 
-          required 
-          value={form.email}
-          onChange={e => setForm({...form, email: e.target.value})} 
-        />
-        <input 
-          type="password" 
-          placeholder="Password" 
-          required 
-          value={form.password}
-          onChange={e => setForm({...form, password: e.target.value})} 
-        />
-        <input 
-          type="number" 
-          placeholder="Age" 
-          required 
-          value={form.age}
-          onChange={e => setForm({...form, age: e.target.value})} 
-        />
+        <div>
+          <input 
+            placeholder="Nickname" 
+            required 
+            value={form.nickname}
+            onChange={e => setForm({...form, nickname: e.target.value})} 
+          />
+        </div>
+        <div>
+          <input 
+            type="email" 
+            placeholder="Email" 
+            required 
+            value={form.email}
+            onChange={e => setForm({...form, email: e.target.value})} 
+          />
+        </div>
+        <div>
+          <input 
+            type="password" 
+            placeholder="Password" 
+            required 
+            value={form.password}
+            onChange={e => setForm({...form, password: e.target.value})} 
+          />
+        </div>
+        <div>
+          <input 
+            type="number" 
+            placeholder="Age" 
+            required 
+            value={form.age}
+            onChange={e => setForm({...form, age: e.target.value})} 
+          />
+        </div>
+        {error && <p className="error">{error}</p>}
         <button type="submit">Register</button>
       </form>
     </div>

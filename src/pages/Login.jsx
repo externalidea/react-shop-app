@@ -22,23 +22,28 @@ const Login = () => {
       <h2>Login</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleLogin} className="form-group">
-        <input 
-          type="email" 
-          placeholder="Email" 
-          required
-          value={credentials.email}
-          onChange={e => setCredentials({...credentials, email: e.target.value})} 
-        />
-        <input 
-          type="password" 
-          placeholder="Password" 
-          required
-          value={credentials.password}
-          onChange={e => setCredentials({...credentials, password: e.target.value})} 
-        />
-        <button type="submit">Enter</button>
+        <div>
+          <input 
+            type="email" 
+            placeholder="Email" 
+            required
+            value={credentials.email}
+            onChange={e => setCredentials({...credentials, email: e.target.value})} 
+          />
+        </div>
+        <div>
+          <input 
+            type="password" 
+            placeholder="Password" 
+            required
+            value={credentials.password}
+            onChange={e => setCredentials({...credentials, password: e.target.value})} 
+          />
+        </div>
+        {error && <p className="error">{error}</p>}
+        <button type="submit">Login</button>
       </form>
-      <p style={{ marginTop: '1rem' }}>
+      <p style={{ marginTop: '1rem', textAlign: 'center' }}>
         Don't have an account? <Link to="/register">Register here</Link>
       </p>
     </div>
