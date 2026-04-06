@@ -7,7 +7,7 @@ const ProductItem = ({ product }) => {
 
   return (
     <div className="card">
-      // Using Link for navigation to product page, better than window.location
+      {/* Using Link for navigation to product page, better than window.location */}
       <h3>
         <Link to={`/product/${product.id}`} style={{ color: 'inherit', textDecoration: 'none' }}>
           {product.name}

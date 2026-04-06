@@ -29,8 +29,10 @@ const Admin = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Using React state for form validation instead of external libraries
-  // Keeps it simple and built-in
+  /*
+  Using React state for form validation instead of external libraries
+  Keeps it simple and built-in
+  */
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateForm()) return;
